@@ -22,6 +22,13 @@ describe Calculator do
       it 'return the sum of all numbers' do 
         expect(calculator.add("1,3,5")).to eq(9)
       end
-    end  
+    end 
+    
+    context 'when the input string contains new line as delimiters between numbers' do 
+      it 'handles the new lines and return sum of all string numbers' do 
+        expect(calculator.add("3\n5,6")).to eq(14)
+        expect(calculator.add("10\n20\n30")).to eq(60)
+      end
+    end
   end
 end
