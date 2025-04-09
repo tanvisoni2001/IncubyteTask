@@ -10,4 +10,3 @@ class Calculator
 	end
 end
 
-
