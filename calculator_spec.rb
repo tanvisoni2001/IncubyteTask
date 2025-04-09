@@ -30,5 +30,16 @@ describe Calculator do
         expect(calculator.add("10\n20\n30")).to eq(60)
       end
     end
+
+    context 'when a custom delimeter specified in string' do 
+      it 'handles the custom delimeter specified at the beginnng for the string' do 
+        expect(calculator.add("//;\n10;20")).to eq(30)
+        expect(calculator.add("//@\n1@8@2")).to eq(11)
+      end
+      it 'handles a custom delimiter and newlines as delimiters' do
+        expect(calculator.add("//a\n1a2\n3")).to eq(6)
+        expect(calculator.add("//|\n10|20\n30")).to eq(60)
+      end  
+    end
   end
 end
